@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+// import HelloWorld from './components/HelloWorld.vue';
 import Widget01 from './components/Widget01.vue';
 </script>
 
 
 <template>
-<QCard>
-<QCardSection>
+<Widget01 expanded="true"/>  
+<!-- <QCardSection>
   <Widget01 expanded="true"/>  
 </QCardSection>
-</QCard>
+</QCard> -->
 </template>
 
 <style lang="scss" scoped>

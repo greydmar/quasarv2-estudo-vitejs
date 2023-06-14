@@ -11,5 +11,9 @@ export default defineConfig({
     quasar({
       autoImportComponentCase: 'pascal',
     }),
+    
   ],
+  server:{
+    port: 3000
+  }
 });

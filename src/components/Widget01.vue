@@ -1,11 +1,29 @@
+<script lang="ts" >
+import { ref } from 'vue'
+
+export default {
+  setup () {
+    return {
+      imageSrc: "~/assets/parallax2.jpg",
+      expanded: ref(false),
+      lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    }
+  }
+}
+const defs={
+  imageSrc: "~/assets/parallax2.jpg",
+  expanded: ref(false),
+}
+
+</script>
+
 <template>
   <div class="q-pa-md row items-start q-gutter-md">
     <q-card class="my-card" flat bordered>
-      <img alt="Quasar logo" src="assets/vue.svg" />
-      <!-- <q-img
-        src="~assets/parallax.svg"
-      /> -->
-      
+      <!-- <q-img :src="require(plan.imageSrc)"/> -->
+      <!-- <q-img :src="imageSrc"/> -->
+      <q-img :src="imageSrc"/>
+
       <q-card-section>
         <div class="text-overline text-orange-9">Overline</div>
         <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
@@ -17,7 +35,9 @@
       <q-card-actions>
         <q-btn flat color="primary" label="Share" />
         <q-btn flat color="secondary" label="Book" />
+
         <q-space />
+
         <q-btn
           color="grey"
           round
@@ -31,7 +51,7 @@
       <q-slide-transition>
         <div v-show="expanded">
           <q-separator />
-          <q-card-section class="text-subitle2">
+          <q-card-section class="text-subtitle2">
             {{ lorem }}
           </q-card-section>
         </div>
@@ -40,17 +60,8 @@
   </div>
 </template>
 
-<script>
-import { ref } from 'vue'
-
-defineProps<{ expande: string, lorem:string }>()
-
-export default {
-  setup () {
-    return {
-      expanded: ref(false),
-      lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    }
-  }
-}
-</script>
+<style lang="sass" scoped>
+.my-card
+  width: 100%
+  max-width: 350px
+</style>
